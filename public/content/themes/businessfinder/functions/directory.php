@@ -197,6 +197,35 @@ function getItems($category = 0, $location = 0, $search = '', $radius = array())
 			$item->rating = get_post_meta( $item->ID, 'rating', true );
 		}
 	}
+	
+
+	//My code
+	$url = 'https://buyoriginal.herokuapp.com/services/v1/dev/stores/storelist/city/031';
+
+	$ch = curl_init(); 
+	curl_setopt($ch, CURLOPT_URL, $url); 
+	curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE); 
+	curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+	    'Content-Type: application/json',
+	    'token: emFuYmlsZGFyYW5naGVybWV6DQo='
+	    ));
+	$response = curl_exec($ch); 
+	curl_close($ch);
+	$response = json_decode($response)[0];
+
+	$new_object = new WP_Post();
+
+	$new_object->optionsDir = [];
+	$new_object->post_title = $response->bCategory;
+	$new_object->post_type = $response->bCategory;
+	$new_object->optionsDir['address'] = $response->sAddress;
+	$new_object->optionsDir['gpsLatitude'] = $response->sLat;
+	$new_object->optionsDir['gpsLongitude'] = $response->sLong;
+	$new_object->thumbnailDir = 'content/themes/businessfinder/design/img/default-post-image.jpg';
+	$new_object->marker = 'content/themes/businessfinder/design/img/map-icon/company.png';
+	$new_object->ID = rand();
+	$items[] = $new_object;
+	//
 
 	return $items;
 
