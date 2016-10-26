@@ -23,13 +23,13 @@
 define('DB_NAME', 'asl');
 
 /** MySQL database username */
-define('DB_USER', 'root');
+define('DB_USER', 'b4ea925a107940');
 
 /** MySQL database password */
-define('DB_PASSWORD', '3pehr 001');
+define('DB_PASSWORD', 'bb2e148a');
 
 /** MySQL hostname */
-define('DB_HOST', 'localhost');
+define('DB_HOST', 'eu-cdbr-west-01.cleardb.com');
 
 /** Database Charset to use in creating database tables. */
 define('DB_CHARSET', 'utf8mb4');
