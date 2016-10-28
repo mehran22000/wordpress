@@ -221,8 +221,8 @@ function getItems($category = 0, $location = 0, $search = '', $radius = array())
 	$new_object->optionsDir['address'] = $response->sAddress;
 	$new_object->optionsDir['gpsLatitude'] = $response->sLat;
 	$new_object->optionsDir['gpsLongitude'] = $response->sLong;
-	$new_object->thumbnailDir = 'content/themes/businessfinder/design/img/default-post-image.jpg';
-	$new_object->marker = 'content/themes/businessfinder/design/img/map-icon/company.png';
+	$new_object->thumbnailDir = 'http://localhost/wordpress-master/public/wp/wp-content/themes/businessfinder/design/img/default-post-image.jpg';
+	$new_object->marker = 'http://localhost/wordpress-master/public/wp/wp-content/themes/businessfinder/design/img/map-icon/company.png';
 	$new_object->ID = rand();
 	$items[] = $new_object;
 	//
