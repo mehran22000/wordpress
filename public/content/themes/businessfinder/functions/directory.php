@@ -200,7 +200,7 @@ function getItems($category = 0, $location = 0, $search = '', $radius = array())
 	
 
 	//My code
-	$url = 'https://buyoriginal.herokuapp.com/services/v1/dev/stores/storelist/city/031';
+	$url = 'https://buyoriginal.herokuapp.com/services/v1/dev/stores/storelist/all/32.629198/51.684084/1';
 
 	$ch = curl_init(); 
 	curl_setopt($ch, CURLOPT_URL, $url); 
